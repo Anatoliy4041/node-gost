@@ -1,6 +1,11 @@
 FROM nodesource/node:8
 
-RUN apt-get install lsb-core
+RUN apt-get update && \
+    apt-get install lsb-core -y
+
+RUN mkdir -p /csp-4.0
+WORKDIR /csp-4.0
+ADD csp-4.0/ /csp-4.0 
 
 RUN dpkg -i cprocsp-curl-64_4.0.0-4_amd64.deb
 RUN dpkg -i lsb-cprocsp-base_4.0.0-4_all.deb
