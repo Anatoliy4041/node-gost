@@ -7,13 +7,10 @@ RUN mkdir -p /csp-4.0
 WORKDIR /csp-4.0
 ADD csp-4.0/ /csp-4.0 
 
-RUN dpkg -i lsb-cprocsp-base_4.0.0-4_all.deb
-RUN dpkg -i lsb-cprocsp-rdr-64_4.0.0-4_amd64.deb
-RUN dpkg -i lsb-cprocsp-capilite-64_4.0.0-4_amd64.deb
-RUN dpkg -i lsb-cprocsp-kc1-64_4.0.0-4_amd64.deb
+RUN bash install.sh
+
 RUN dpkg -i lsb-cprocsp-kc2-64_4.0.0-4_amd64.deb
 
-RUN dpkg -i cprocsp-curl-64_4.0.0-4_amd64.deb
 RUN dpkg -i cprocsp-cpopenssl-64_4.0.0-4_amd64.deb
 RUN dpkg -i cprocsp-cpopenssl-base_4.0.0-4_all.deb
 RUN dpkg -i cprocsp-cpopenssl-devel_4.0.0-4_all.deb
